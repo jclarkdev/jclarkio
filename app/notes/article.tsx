@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Eye, View } from "lucide-react";
 
 type Props = {
-	notes: Note;
+	note: Note;
 	views: number;
 };
 
