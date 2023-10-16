@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Home } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -29,25 +29,41 @@ export const Navigation: React.FC = () => {
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
 					<div className="flex justify-between gap-8">
 						<Link
+							href="/notes"
+							className="duration-200 text-zinc-500 hover:text-zinc-100"
+						>
+							Notes
+						</Link>
+						<Link
 							href="/projects"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
+							className="duration-200 text-zinc-500 hover:text-zinc-100"
 						>
 							Projects
 						</Link>
-						<Link
-							href="/contact"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
-						>
-							Contact
-						</Link>
 					</div>
 
-					<Link
-						href="/"
-						className="duration-200 text-zinc-300 hover:text-zinc-100"
-					>
-						<ArrowLeft className="w-6 h-6 " />
-					</Link>
+					<div className="flex justify-between gap-4">
+						<Link
+							href="/"
+							className={`duration-200 hover:font-medium ${
+								isIntersecting
+									? " text-zinc-500 hover:text-zinc-100"
+									: "text-zinc-600 hover:text-zinc-900"
+							} `}
+						>
+							<ArrowLeft className="w-6 h-6 " />
+						</Link>
+						<Link
+							href="/"
+							className={`duration-200 hover:font-medium ${
+								isIntersecting
+									? " text-zinc-500 hover:text-zinc-100"
+									: "text-zinc-600 hover:text-zinc-900"
+							} `}
+						>
+							<Home className="w-6 h-6 " />
+						</Link>
+					</div>
 				</div>
 			</div>
 		</header>

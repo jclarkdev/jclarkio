@@ -1,24 +1,23 @@
 import "../global.css";
-import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
 	title: {
-		default: "chronark.com",
-		template: "%s | chronark.com",
+		default: "j. clark",
+		template: "%s | j. clark",
 	},
-	description: "Software engineer at upstash.com and founder of planetfall.io",
+	description: "Shopify Frontend Developer at ECOM DEPT, Musician, and Producer",
 	openGraph: {
-		title: "chronark.com",
+		title: "j. clark",
 		description:
-			"Software engineer at upstash.com and founder of planetfall.io",
-		url: "https://chronark.com",
-		siteName: "chronark.com",
+			"Shopify Frontend Developer at ECOM DEPT, Musician, and Producer",
+		url: "https://jclark.io",
+		siteName: "j. clark",
 		images: [
 			{
-				url: "https://chronark.com/og.png",
+				url: "https://jclark.io/og.png",
 				width: 1920,
 				height: 1080,
 			},
@@ -38,21 +37,22 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "Chronark",
+		title: "j clark",
 		card: "summary_large_image",
 	},
 	icons: {
 		shortcut: "/favicon.png",
 	},
 };
-const inter = Inter({
-	subsets: ["latin"],
-	variable: "--font-inter",
+
+const crimson = LocalFont({
+	src: "../public/fonts/CrimsonText-Regular.ttf",
+	variable: "--font-crimson",
 });
 
-const calSans = LocalFont({
-	src: "../public/fonts/CalSans-SemiBold.ttf",
-	variable: "--font-calsans",
+const bebas = LocalFont({
+	src: "../public/fonts/bebas-neue.ttf",
+	variable: "--font-bebas",
 });
 
 export default function RootLayout({
@@ -61,9 +61,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+		<html lang="en" className={[crimson.variable, bebas.variable].join(" ")}>
 			<head>
 				<Analytics />
+				<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 			</head>
 			<body
 				className={`bg-black ${

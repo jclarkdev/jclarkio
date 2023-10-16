@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Particles from "../../components/particles";
 
 type Props = {
-	project: {
+	note: {
 		url?: string;
 		title: string;
 		description: string;
@@ -14,21 +14,21 @@ type Props = {
 
 	views: number;
 };
-export const Header: React.FC<Props> = ({ project, views }) => {
+export const Header: React.FC<Props> = ({ note, views }) => {
 	const ref = useRef<HTMLElement>(null);
 	const [isIntersecting, setIntersecting] = useState(true);
 
 	const links: { label: string; href: string }[] = [];
-	if (project.repository) {
+	if (note.repository) {
 		links.push({
 			label: "GitHub",
-			href: `https://github.com/${project.repository}`,
+			href: `https://github.com/${note.repository}`,
 		});
 	}
-	if (project.url) {
+	if (note.url) {
 		links.push({
 			label: "Website",
-			href: project.url,
+			href: note.url,
 		});
 	}
 	useEffect(() => {
@@ -94,7 +94,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 
 					<div className="flex justify-between gap-4">
 						<Link
-							href="/projects"
+							href="/notes"
 							className={`duration-200 hover:font-medium ${
 								isIntersecting
 									? " text-zinc-400 hover:text-zinc-100"
@@ -119,11 +119,11 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 			<div className="container mx-auto relative isolate overflow-hidden  py-24 sm:py-32">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 					<div className="mx-auto max-w-2xl lg:mx-0">
-						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display image-underline">
-							{project.title}
+						<h1 className="text-6xl font-bold tracking-tight text-white sm:text-6xl font-display image-underline">
+							{note.title}
 						</h1>
-						<p className="mt-6 text-lg leading-8 text-zinc-300">
-							{project.description}
+						<p className="mt-6 text-base leading-6 text-zinc-300">
+							{note.description}
 						</p>
 					</div>
 

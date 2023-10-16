@@ -3,8 +3,47 @@
 @tailwind utilities;
 
 @layer base {
+  .animate-fade-in {
+    animation: fade-in 3s ease-in-out !important;
+    transition-delay: 0s !important;
+  }
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  }
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+  p {
+    font-size: 18px;
+  }
+  .border-image {
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: url(/neon-border.jpg);
+    border-image-slice: 60 30;
+  }
+  .border-image--hover:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: url(/neon-border.jpg);
+    border-image-slice: 60 30;
+  }  
+  .image-underline {
+    border-style: solid;
+    border-width: 6px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-image-source: url(/neon-border.jpg);
+    border-image-slice: 60 30;
+    display: inline-block;
+  }  
+  .prose {
+    max-width: 950px !important;
   }
 } 
 
